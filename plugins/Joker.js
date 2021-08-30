@@ -1,0 +1,85 @@
+let handler  = async (m, { conn }) => {
+  conn.reply(m.chat,`"${pickRandom(global.joker)}”`, m)
+}
+handler.help = ['joker']
+handler.tags = ['chiste']
+handler.command = /^(joker)$/i
+handler.premium = true
+module.exports = handler
+
+function pickRandom(list) {
+  return list[Math.floor(list.length * Math.random())]
+}
+
+// https://jalantikus,com/tips/kata-kata-joker/
+global,joker = [
+  "¿Por que en haiti cuando estan por dar a luz ponen un recipiente de agua caliente al lado suyo? Por si el bebe nace muerto se hacen un caldo.",
+  "¿Por qué los Downs no pueden mirar películas de terror? Por qué son paranormales.",
+  "Los negros no se convierten en ángeles cuando mueren porque si les ponen alas son murciélagos.",
+  "¿Que diferencia hay entre el amor y el sida? Pues que el sida es para toda la vida.",
+  "¿De que color era el coche de Lady Di? Negro estampado.",
+  "Si no tienes exito a la primera, el puenting no es lo tuyo.",
+  "¿Como se llama el compuesto quimico para evitar el embarazo? Nitrato de meterlo.",
+  "-Papá que es ¿el humor negro?\n+¿ves ése hombre sin brazos?. Dile que aplauda\n-pero papá soy ciego\n+exacto.",
+  "¿Porqué los negros son zurdos? Porque no tienen derechos.",
+  "Doctor, ¿tendré cura?\n¡Por supuesto, cura, misa y funeral!.",
+  "Dos amigos se encuentran y le dice uno al otro:\n-Oye, ¿tu abuela es mecanica?.\n-No, ¿por qué?.\n-Porque la he visto en la autopista debajo de un camión.",
+  "Suena el telefonillo de una casa:\n-¿Quién es?\n-¿Puede bajar Juanito a jugar al baloncesto?\n-Pero que crueles sois, sabéis que no tiene ni brazos ni piernas.\n-Si, pero rebota muy bien.",
+  "¿Qué haces con gorra, camiseta de los Lakers y collares de oro?\n¡Es el velatorio de tu madre!\n¿No había que venir de negro?",
+  "¿Tú sabes cómo se hace el aceite de niños?\nMoliendo niños en una almazara.",
+  "¿Que hace una niña columpiándose en Kosovo?\nMarear al francotirador.",
+  "¿Qué hacen dos epilépticos en una cabina de fotos?\nLa fiesta de la espuma.",
+  "¿Qué son 70 parapléjicos saltando de un décimo piso?\nEl Tetris.",
+  "Mamá, mamá, Pepito está mordiéndole las uñas a la abuela.\nPues cierra el ataúd.",
+  "Mamá, ¿puedo ir a jugar con el abuelo?\nBueno, pero luego le pones todas las prótesis en su sitio.",
+  "Doctor, ¿tendré cura?\n¡Por supuesto, cura, misa y funeral!",
+  "Mamá, mamá, dame una galleta.\nCójela tú mismo.\nPero mamá, ¿es que no sabes que no tengo brazos?\nAh! Pues si no hay brazos no hay galleta.",
+  "Mamá, mamá, no quiero ir a América.\nCalla hijo, sigue nadando.",
+  "Hijo, sube a casa, como los buenos niños.\nNo, mamá, que me vuelves a tirar.",
+  "Doctor, ¿qué me dijo antes? ¿Géminis, Libra...\nCáncer.",
+  "¿Qué diferencia hay entre el amor y el sida?.\nPues que el sida es para toda la vida.",
+  "Va un hombre y le dice a un leproso:\nSe te ha caído la oreja.\n¿Qué?",
+  "Van tres canis en un coche, ¿Quién conduce?\nEl policía.",
+  "¿Qué hace un leproso tocando la guitarra?.\nCarne picada.",
+  "¿De qué color era el coche de Lady Di?\nNegro estampado.",
+  "Mama, mama, de mayor quiero ser skin-head.\nAnda niño, que además de negro eres tonto.",
+  "El epitafio de una suegra:\nAquí descansa doña María. En casa descansamos todos.",
+  "¿Acepta usted a María en la salud y en la enfermedad, en la riqueza y en la pobreza hasta que la muerte os separe?\nSi, no, si, no, no.",
+  "Entra un hombre a un velatorio y le dice a la viuda:\nLo siento.\nY dice la viuda:\nNo, déjelo echado.",
+  "Esto es una niña pequeña que le dice a su madre:\nMami, ¡quiero pipi!.\nY la madre contesta:\n¿Otra vez?. Este ya es el cuarto vaso que te tomas...",
+  "¿Doctor, cómo ha ido la operación?\n¿Operación? ¿No era una autopsia?",
+  "Es antinatural tener dos papás\nPero Jesús tiene dos papás\nLargo de mi Iglesia...",
+  "Una pregunta para los ciegos:\n¿Cuando saben cuándo deben dejar de limpiarse el culo?",
+  "Doctor: ¿Cual es su signo?\nPaciente: Cancer.\nDoctor: Que casualidad...",
+  "¿Cual es la diferencia entre Jesús y un cuadro?\nEn que para colgar al cuadro hace falta sólo un clavo",
+  "Llama Bin Laden:\nSoy Bin Laden y tengo dos noticias, una buena y una mala.\n¿La buena?\nMe voy a entregar.\n¿La mala?\nVoy en avión.",
+  "Una madre da a luz y al coger a su hijo en brazos se le cae al suelo.\n¡Joder, que resbaladizo salen esos bebés muertos!",
+  "¿Cómo se sacan las fotos los negros?\nEn negativo.",
+  "¿Cuál es la parte más dura de un vegetal?\nLa silla de ruedas.",
+  "Mamá, mamá, ¿me queda bien el vestido?\nSe te ve la silla de ruedas.",
+  "Dos viejecitas merendando, y uno le dice a la otra:\nEsta leche no está buena.\nLa otra le responde:\nY mañana Navidad.",
+  "El médico le dice a su paciente:\nLo siento, le doy dos meses de vida.\nEl paciente le responde:\n¿Me puede dar julio y agosto?",
+  "Un enfermo sale del médico con mala cara, muy preocupado, cuando de pronto le asalta un ladrón:\n¡La bolsa o la vida!\n¿Ah, tú también eres medico?",
+  "Mamá, mamá, ¿por qué vienen los Reyes Magos en agosto?\nCalla hija que con el cáncer que tienes no llegas a diciembre.",
+  "Mamá, mamá, en el cole me llaman calvo.\nCállate, hijo. ¿Cómo quieres la cabeza hoy, mate o brillo?",
+  "¡Señora, señora, a su hijo lo acaba de atropellar una apisonadora?\nPásemelo por debajo de la puerta.",
+  "¡Mamá, mamá, papá esta tirando las cosas por la ventanaaaaaaaaaaaaaaaaaaaaaaaaaaaa!",
+  "Abuelita, abuelita, cierra los ojos.\n¿Por qué, hijo?\nPorque dice papá que cuando cierres los ojos seremos millonarios.",
+  "Una madre le dice a la otra a la puerta del colegio:\nSu hijo le ha sacado la lengua al mío.\nSon cosas de niños.\nSerán cosas de niños, pero no le puedo cortar la hemorragia.",
+  "Mamá, mamá, la abuela está en la radio.\nY en la guantera, y en el maletero, y en el volante... ¿Ves la importancia de ponerte el cinturón de seguridad?",
+  "Un enfermo se despierta después de la operación:\n¡Doctor, doctor, no me encuentro la pierna!\nNo va a poder encontrarla, también le hemos amputado el brazo.",
+  "Doctor, el paciente de la 213 no para de toser.\n¿Le ha puesto el termómetro?\nLe he puesto cinco termómetros en la garganta, pero no para de toser.",
+  "Una chica tan bajita tan bajita que le gustaba ir al médico para que le dieran el alta.",
+  "Un jorobado va por la calle y se le cae el paquete de Camel. Otro transeúnte lo recoge, lo mira, y le grita:\n¡Oiga, que se le ha caído el DNI!",
+  "Un hombre va a soplar los velas de la tarta cuando la mujer mayor le dice:\nPedro, cierra los ojos y pide un deseo.\nNo se arriesgue, suegra, no se arriesgue.",
+  "Dos amigos tomando algo, y empiezan a hablar de las suegras:\nNo soporto a mi suegra, me saca de mis casillas.\nPues la mía es perfecta, solo tiene un defecto.\n¿Cuál?\nQue respira.",
+  "Abuelita, abuelita, mira que estás gorda...\nSí hijo sí, como una tapia.",
+  "Doctor, doctor, me duele mucho la pierna izquierda.\nEso son cosas de la edad, hombre.\nSí pero es que la otra tiene los mismos años y no me duele.",
+  "Oye Patxi, ¿en qué ostias andas?\nPues aquí, echando mierda a las fresas.\nAibalaostia, ¿y no has probado con nata?",
+  "¿Qué es algo negro, crujiente y cuelga del techo?\nUn electricista polaco.",
+  "¿Que dijo Dios al ver el primer negro?\nCreo que he quemado uno.",
+  "Un negro, un gitano, un rumano y un yonki en un coche. ¿Quién conduce?\nLa Guardia Civil.",
+  "Una abuela le pregunta al conductor del autobús:\n¿El camino más rápido al cementerio?\nPóngase debajo de la rueda.",
+  "Un viejo va a la consulta del médico para hacerse una revisión general.\n¿Cuánto tiempo de vida me queda?\nNueve...\n¡¿Nueve años sólo?!\nOcho, siete, seis, cinco, cuatro, tres...",
+  "Doctor, últimamente pierdo la memoria.-¿Desde cuándo le pasa?\n-¿Desde cuándo qué...?",
+]
